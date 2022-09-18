@@ -1,0 +1,8 @@
+#Virtual Python Environment
+env/
+
+#Checkpoints
+.ipynb_checkpoints
+
+#MacOS files
+.DS_Store
