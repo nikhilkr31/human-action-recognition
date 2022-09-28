@@ -66,7 +66,7 @@ def show_img_train():
  
 - Adam is an optimization algorithm that can be used instead of the classical stochastic gradient descent procedure to update network weights iterative based in training data. This algorithm is straight forward to implement and computationally efficient.
 
-`
+<code>
 cnn_model.compile(optimizer='adam', loss='categorical_crossentropy',metrics=['accuracy'])
 cnn_model.summary()
 
@@ -86,7 +86,8 @@ _________________________________________________________________
 Total params: 14,985,039
 Trainable params: 270,351
 Non-trainable params: 14,714,688
-_________________________________________________________________`
+_________________________________________________________________
+</code>
 
 ## Loss function
 
