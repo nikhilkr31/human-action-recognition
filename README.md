@@ -94,14 +94,14 @@ _________________________________________________________________`
 ![accuracy function](./images/accuracy.png)
 
 
-`
+<code>
 from sklearn.metrics import accuracy_score, log_loss
 
 print('Log Loss:',log_loss(np.round(y_preds),y_test))
 print('Accuracy:',accuracy_score(np.round(y_preds),y_test))
 
 Log Loss: 12.417512465789333
-Accuracy: 0.6317460317460317`
+Accuracy: 0.6317460317460317</code>
 
 ## Next Steps and Recommendations
 
