@@ -4,7 +4,7 @@ Human Action Recognition (HAR) aims to understand human behavior and assign a la
 ## What is Human Action Recognition(HAR)?
 
 - Human activity recognition, or HAR for short, is a broad field of study concerned with identifying the specific movement or action of a person based on sensor data.
-- Movements are often typical activities performed indoors, such as walking, talking, standing, and sitting
+- Movements are often typical activities performed indoors, such as walking, talking, standing,etc.
 
 ## Why it is important ?
 - Human activity recognition plays a significant role in human-to-human interaction and interpersonal relations.
