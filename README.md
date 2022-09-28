@@ -44,14 +44,17 @@ Transfer learning is a machine learning method where a model developed for a tas
 ![transfer learning](./images/transfer.jpeg)
 
 ## Sample training images data
-`def show_img_train():
+
+'''python
+def show_img_train():
     img_num = np.random.randint(0,12599)
     img = cv.imread('data/train/' + train_action.filename[img_num])
     plt.imshow(cv.cvtColor(img, cv.COLOR_BGR2RGB))
     plt.title(train_action.label[img_num])
- show_img_train()`
+ show_img_train()
+'''
  
- ![cycling](./images/cycling.png)
+![cycling](./images/cycling.png)
  
 ## Action Distribution
 
