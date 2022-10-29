@@ -37,7 +37,7 @@ VGG-16 is a convolutional neural network that is 16 layers deep. You can load a 
 
 ![vgg16](./images/vgg16.png)
 
-## What is Transfer Learning
+## Transfer Learning
 
 Transfer learning is a machine learning method where a model developed for a task is reused as the starting point for a model on a second task. It is a popular approach in deep learning where pre-trained models are used as the starting point on computer vision and natural language processing tasks given the vast compute and time resources required to develop neural network models on these problems and from the huge jumps in skill that they provide on related problems.
 
