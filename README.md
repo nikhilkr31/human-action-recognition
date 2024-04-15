@@ -1,7 +1,10 @@
-# human-action-recognition
+## Human Action Recognition
+<p style="text-align: left;">Nikhil Kumar Ramreddy</p>
+<hr>
+
 Human Action Recognition (HAR) aims to understand human behavior and assign a label to each action. It has a wide range of applications, and therefore has been attracting increasing attention in the field of computer vision. Human actions can be represented using various data modalities, such as RGB, skeleton, depth, infrared, point cloud, event stream, audio, acceleration, radar, and WiFi signal, which encode different sources of useful yet distinct information and have various advantages depending on the application scenarios.
 
-## What is Human Action Recognition(HAR)?
+## What is Human Action Recognition (HAR)?
 
 - Human activity recognition, or HAR for short, is a broad field of study concerned with identifying the specific movement or action of a person based on sensor data.
 - Movements are often typical activities performed indoors, such as walking, talking, standing,etc.
@@ -33,7 +36,13 @@ CNNs are powerful image processing, artificial intelligence (AI) that use deep l
 
 ## VGG16
 
-VGG-16 is a convolutional neural network that is 16 layers deep. You can load a pretrained version of the network trained on more than a million images from the ImageNet database. The pretrained network can classify images into 1000 object categories, such as keyboard, mouse, pencil, and many animals. As a result, the network has learned rich feature representations for a wide range of images. The network has an image input size of 224-by-224.
+ImageNet Large-Scale Visual Recognition Challenge (ILSVRC) is an annual event to showcase and challenge computer vision models. In the 2014 ImageNet challenge, Karen Simonyan & Andrew Zisserman from Visual Geometry Group, Department of Engineering Science, University of Oxford showcased their model in the paper titled “VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION,” which won the 1st and 2nd place in object detection and classification. The original paper can be downloaded from the below link:
+
+[1409.1556.pdf (arxiv.org)](https://arxiv.org/pdf/1409.1556.pdf)
+
+A convolutional neural network is also known as a ConvNet, which is a kind of artificial neural network. A convolutional neural network has an input layer, an output layer, and various hidden layers. VGG16 is a type of CNN (Convolutional Neural Network) that is considered to be one of the best computer vision models to date.
+
+VGG16 is object detection and classification algorithm which is able to classify 1000 images of 1000 different categories with 92.7% accuracy. It is one of the popular algorithms for image classification and is easy to use with transfer learning.
 
 ![vgg16](./images/vgg16.png)
 
@@ -45,14 +54,14 @@ Transfer learning is a machine learning method where a model developed for a tas
 
 ## Sample training images data
 
-<code>
+```Python
 def show_img_train():
     img_num = np.random.randint(0,12599)
     img = cv.imread('data/train/' + train_action.filename[img_num])
     plt.imshow(cv.cvtColor(img, cv.COLOR_BGR2RGB))
     plt.title(train_action.label[img_num])
  show_img_train()
-</code>
+```
  
 ![cycling](./images/cycling.png)
  
@@ -66,7 +75,7 @@ def show_img_train():
  
 - Adam is an optimization algorithm that can be used instead of the classical stochastic gradient descent procedure to update network weights iterative based in training data. This algorithm is straight forward to implement and computationally efficient.
 
-<code>
+```Python
 cnn_model.compile(optimizer='adam', loss='categorical_crossentropy',metrics=['accuracy'])
 cnn_model.summary()
 
@@ -87,7 +96,7 @@ Total params: 14,985,039
 Trainable params: 270,351
 Non-trainable params: 14,714,688
 _________________________________________________________________
-</code>
+```
 
 ## Loss function
 
@@ -98,14 +107,16 @@ _________________________________________________________________
 ![accuracy function](./images/accuracy.png)
 
 
-<code>
+```Python
 from sklearn.metrics import accuracy_score, log_loss
 
 print('Log Loss:',log_loss(np.round(y_preds),y_test))
 print('Accuracy:',accuracy_score(np.round(y_preds),y_test))
-
+```
+```Python
 Log Loss: 12.417512465789333
-Accuracy: 0.6317460317460317</code>
+Accuracy: 0.6317460317460317
+```
 
 ## Next Steps and Recommendations
 
@@ -114,6 +125,6 @@ Accuracy: 0.6317460317460317</code>
 
 - We can tune the parameters using KerasTuner.
 
-- The model reached a good accuracy score after the 20 epochs but it has been trained for 60 epochs. There is definitely some overfitting which can avoided with early stopping.
+- The model reached a good accuracy score after the 20 epochs but it has been trained for 60 epochs which leads us to believe that the model is overfit. This can be avoided with early stopping.
 
-- The nodes in the deep layers were connected. We can introduce some amount dropout for regularization.
+- The nodes in the deep layers were fully connected. Further introducing some dropout for regularization can also be done to avoid over-fitting.
